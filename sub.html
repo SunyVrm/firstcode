@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+        .menu ul{
+            display: flex; /*Vertical nav ko horizontal bnane k liy*/
+            list-style: none; /*bullet point htane k liy*/
+            gap: 10px;
+            align-items: center; /*content center m lane k liy*/
+            justify-content: center; /*content center m lane k liy*/
+        }
+
+        .menu ul li{
+            padding: 10px 15px;
+            background-color: aqua;
+            position: relative;
+        }
+
+        .menu ul li:hover .sub{
+            animation-name: anime;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes anime {
+            from {top: 130%}
+            to {top: 100%}
+        }
+
+        .menu ul li a{
+            color: #000;
+            text-decoration: none;
+        }
+
+        .menu ul li a:hover{
+            color: #f00;
+            transition: all 0.5s;
+        }
+
+        .sub ul{
+            display: block;/*horizontal nav ko vertical bnane k liy*/
+        }
+        .sub ul li{
+            background-color: #f00;
+            width: 140px;
+        }
+        .sub ul li:hover{
+            background-color: #ff0;
+        }
+        .sub{
+            display: none;
+        }
+        .sub ul li a:hover{
+            color: #000;
+            /* transition: none; */
+        }
+
+        .menu ul li:hover .sub{
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+        .menu ul li a.active{
+            color: white;
+            transition: 0.5s;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="menu">
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Services</a>
+            
+                <div class="sub">
+                    <ul>
+                        <li><a href="#">Services1</a></li>
+                        <li><a href="#">Services2</a></li>
+                        <li><a href="#">Services3</a></li>
+                    </ul>
+                </div>
+            
+            
+            </li>
+            <li><a href="#">Gallery</a>
+            
+                <div class="sub">
+                    <ul>
+                        <li><a href="#">Gallery1</a></li>
+                        <li><a href="#">Gallery2</a></li>
+                        <li><a href="#">Gallery3</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </div>
+
+<h1>Home</h1>
+
+
+</body>
+</html>
+
+
+
